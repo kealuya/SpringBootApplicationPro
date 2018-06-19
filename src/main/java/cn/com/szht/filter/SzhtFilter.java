@@ -21,6 +21,7 @@ public class SzhtFilter implements Filter {
 			throws IOException, ServletException {
 		HttpServletRequest request = (HttpServletRequest) srequest;
 		String uri = request.getRequestURI();
+		
 		if (isExcludedUri(uri)) {
 			filterChain.doFilter(srequest, sresponse);
 		} else {

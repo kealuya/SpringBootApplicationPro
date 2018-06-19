@@ -1,0 +1,23 @@
+[19/Jun/2018:15:35:09 +0800] 0:0:0:0:0:0:0:1 "GET /SpringBootDemo/main/msgget HTTP/1.1" 200 (2402 ms)
+[19/Jun/2018:15:35:09 +0800] 0:0:0:0:0:0:0:1 "GET /SpringBootDemo/static/js/common.js HTTP/1.1" 304 (34 ms)
+[19/Jun/2018:15:35:56 +0800] 0:0:0:0:0:0:0:1 "GET /SpringBootDemo/main/msgget HTTP/1.1" 200 (35 ms)
+[19/Jun/2018:15:35:56 +0800] 0:0:0:0:0:0:0:1 "GET /SpringBootDemo/static/js/common.js HTTP/1.1" 304 (8 ms)
+[19/Jun/2018:15:35:56 +0800] 0:0:0:0:0:0:0:1 "GET /SpringBootDemo/main/msgget HTTP/1.1" 200 (18 ms)
+[19/Jun/2018:15:35:57 +0800] 0:0:0:0:0:0:0:1 "GET /SpringBootDemo/static/js/common.js HTTP/1.1" 304 (4 ms)
+[19/Jun/2018:15:35:57 +0800] 0:0:0:0:0:0:0:1 "GET /SpringBootDemo/main/msgget HTTP/1.1" 200 (21 ms)
+[19/Jun/2018:15:35:57 +0800] 0:0:0:0:0:0:0:1 "GET /SpringBootDemo/static/js/common.js HTTP/1.1" 304 (5 ms)
+[19/Jun/2018:15:35:57 +0800] 0:0:0:0:0:0:0:1 "GET /SpringBootDemo/main/msgget HTTP/1.1" 200 (16 ms)
+[19/Jun/2018:15:35:57 +0800] 0:0:0:0:0:0:0:1 "GET /SpringBootDemo/static/js/common.js HTTP/1.1" 304 (12 ms)
+[19/Jun/2018:15:35:57 +0800] 0:0:0:0:0:0:0:1 "GET /SpringBootDemo/main/msgget HTTP/1.1" 200 (20 ms)
+[19/Jun/2018:15:35:57 +0800] 0:0:0:0:0:0:0:1 "GET /SpringBootDemo/static/js/common.js HTTP/1.1" 304 (13 ms)
+0:0:0:0:0:0:0:1 - - [19/Jun/2018:15:37:57 +0800] "GET /SpringBootDemo/main/msgget HTTP/1.1" 200 361
+0:0:0:0:0:0:0:1 - - [19/Jun/2018:15:37:57 +0800] "GET /SpringBootDemo/main/msgget HTTP/1.1" 200 361
+0:0:0:0:0:0:0:1 - - [19/Jun/2018:15:37:57 +0800] "GET /SpringBootDemo/static/js/common.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [19/Jun/2018:15:37:57 +0800] "GET /SpringBootDemo/main/msgget HTTP/1.1" 200 361
+0:0:0:0:0:0:0:1 - - [19/Jun/2018:15:37:58 +0800] "GET /SpringBootDemo/static/js/common.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [19/Jun/2018:15:37:58 +0800] "GET /SpringBootDemo/main/msgget HTTP/1.1" 200 361
+0:0:0:0:0:0:0:1 - - [19/Jun/2018:15:37:58 +0800] "GET /SpringBootDemo/static/js/common.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [19/Jun/2018:15:37:58 +0800] "GET /SpringBootDemo/main/msgget HTTP/1.1" 200 361
+0:0:0:0:0:0:0:1 - - [19/Jun/2018:15:37:58 +0800] "GET /SpringBootDemo/static/js/common.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [19/Jun/2018:15:47:32 +0800] "GET /SpringBootDemo/main/msgget HTTP/1.1" 200 361
+0:0:0:0:0:0:0:1 - - [19/Jun/2018:15:47:32 +0800] "GET /SpringBootDemo/static/js/common.js HTTP/1.1" 304 -
