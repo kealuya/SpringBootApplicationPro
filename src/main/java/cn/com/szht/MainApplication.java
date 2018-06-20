@@ -10,7 +10,4 @@ public class MainApplication {
 		SpringApplication.run(MainApplication.class, args);
 	}
 
-
-	//TODO 集成权限 SpringSecurity
-	//TODO 集成翻页 PageHelper
 }

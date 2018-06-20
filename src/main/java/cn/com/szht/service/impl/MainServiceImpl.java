@@ -14,7 +14,6 @@ import com.github.pagehelper.PageInfo;
 import cn.com.szht.persistence.dao.CITYMapper;
 import cn.com.szht.persistence.dao.MYTESTMapper;
 import cn.com.szht.persistence.entity.CITY;
-import cn.com.szht.persistence.entity.MYTEST;
 import cn.com.szht.service.MainService;
 
 @Service

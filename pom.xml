@@ -106,7 +106,13 @@
 			<artifactId>pagehelper-spring-boot-starter</artifactId>
 			<version>1.2.3</version>
 		</dependency>
-
+		
+		<!-- shrio -->
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-all</artifactId>
+			<version>1.4.0</version>
+		</dependency>
 
 		<!-- druid阿里巴巴数据库连接池 -->
 		<!-- https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter -->
@@ -115,6 +121,7 @@
 			<artifactId>druid-spring-boot-starter</artifactId>
 			<version>1.1.10</version>
 		</dependency>
+
 		<!-- MySql数据库驱动 -->
 		<dependency>
 			<groupId>mysql</groupId>

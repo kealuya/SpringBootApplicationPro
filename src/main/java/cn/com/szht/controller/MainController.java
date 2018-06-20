@@ -2,6 +2,9 @@ package cn.com.szht.controller;
 
 import java.util.Map;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +46,12 @@ public class MainController {
 		return  "testHello"  ;
 	}
 
-	@RequestMapping(value = "/testerror")
+	@RequestMapping(value = "/index")
+	public String index() {
+		return "login";
+	}
+
+	@RequestMapping(value = "/")
 	public String testerror() {
 		logger.error("testerror", new RuntimeException("testerror"));
 		throw new RuntimeException("testerror");
@@ -51,9 +59,22 @@ public class MainController {
 
 	
 
-	@RequestMapping(value = "/go")
-	public String go() {
-		return  "testHello"  ;
+	@RequestMapping(value = "/login")
+	public String login(String username,String password,Map<String,Object> returnMap) {
+		try {
+		UsernamePasswordToken token = null;
+		Subject currentUser = SecurityUtils.getSubject();
+		token = new UsernamePasswordToken(username, password);
+		token.setRememberMe(false);
+		currentUser.login(token);
+
+		returnMap.put("msg", "success");
+		return  "testHello";
+		} catch (Exception e) {
+			returnMap.put("msg", e);
+			return  "login";
+		}
+		
 	}
 
 }
