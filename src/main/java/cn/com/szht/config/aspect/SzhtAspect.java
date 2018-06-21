@@ -1,4 +1,4 @@
-package cn.com.szht.aspect;
+package cn.com.szht.config.aspect;
 
 import java.util.Arrays;
 
@@ -19,8 +19,8 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 @Aspect
 @Component
-public class LogAspect {
-	@Pointcut("execution(public * cn.com.szht.controller.*.*(..))")
+public class SzhtAspect {
+	@Pointcut("execution(public * cn.com.szht.service.*.*(..))")
 	public void webLog() {
 	}
 
@@ -59,15 +59,10 @@ public class LogAspect {
 
 	// 环绕通知,环绕增强，相当于MethodInterceptor
 	@Around("webLog()")
-	public Object arround(ProceedingJoinPoint pjp) {
+	public Object arround(ProceedingJoinPoint pjp) throws Throwable {
 		System.out.println("方法环绕start.....");
-		try {
-			Object o = pjp.proceed();
-			System.out.println("方法环绕proceed，结果是 :" + o);
-			return o;
-		} catch (Throwable e) {
-			e.printStackTrace();
-			return null;
-		}
+		Object o = pjp.proceed();
+		System.out.println("方法环绕proceed，结果是 :" + o);
+		return o;
 	}
 }

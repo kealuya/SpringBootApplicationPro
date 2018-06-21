@@ -1,6 +1,7 @@
 package cn.com.szht.config;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.catalina.filters.RemoteIpFilter;
@@ -12,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
@@ -22,14 +24,15 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 
-import cn.com.szht.filter.SzhtFilter;
-import cn.com.szht.interceptor.CommonInterceptor;
+import cn.com.szht.config.exception.SzhtExceptionHandler;
+import cn.com.szht.config.filter.SzhtFilter;
+import cn.com.szht.config.interceptor.CommonInterceptor;
 
 /**
  * MyBatis 配置（将路径下的mapper全部视为mapper映射文件） 也可以每个mapper文件上边追加@Mapper注解来实现
  */
 @MapperScan("cn.com.szht.persistence.dao")
-@EnableTransactionManagement//mybatis开启事务
+@EnableTransactionManagement // mybatis开启事务
 @Configuration
 public class WebAppConfig extends WebMvcConfigurationSupport {
 
@@ -100,19 +103,30 @@ public class WebAppConfig extends WebMvcConfigurationSupport {
 		resolver.setSuffix(".jsp");
 		return resolver;
 	}
+
 	/**
 	 * druid登录配置
 	 */
 	@Bean
-    public ServletRegistrationBean<?> druidStatViewServletBean() {
-        //后台的路径
-        ServletRegistrationBean<StatViewServlet> statViewServletRegistrationBean = new ServletRegistrationBean<StatViewServlet>(new StatViewServlet(), "/druid/*");
-        Map<String,String> params = new HashMap<>();
-        //账号密码，是否允许重置数据
-        params.put("loginUsername","renhao");
-        params.put("loginPassword","renhao");
-        params.put("resetEnable","true");
-        statViewServletRegistrationBean.setInitParameters(params);
-        return statViewServletRegistrationBean;
-    }
+	public ServletRegistrationBean<?> druidStatViewServletBean() {
+		// 后台的路径
+		ServletRegistrationBean<StatViewServlet> statViewServletRegistrationBean = new ServletRegistrationBean<StatViewServlet>(
+				new StatViewServlet(), "/druid/*");
+		Map<String, String> params = new HashMap<>();
+		// 账号密码，是否允许重置数据
+		params.put("loginUsername", "renhao");
+		params.put("loginPassword", "renhao");
+		params.put("resetEnable", "true");
+		statViewServletRegistrationBean.setInitParameters(params);
+		return statViewServletRegistrationBean;
+	}
+
+	/**
+	 * 全局错误处理
+	 */
+	@Override
+	public void configureHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers) {
+		super.configureHandlerExceptionResolvers(exceptionResolvers);
+		exceptionResolvers.add(new SzhtExceptionHandler());
+	}
 }

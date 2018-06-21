@@ -17,6 +17,7 @@ import com.alibaba.fastjson.JSON;
 
 import cn.com.szht.dto.Info;
 import cn.com.szht.service.MainService;
+import cn.com.szht.service.UserManagerService;
 
 @Controller
 @RequestMapping("/main")
@@ -25,6 +26,8 @@ public class MainController {
 	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 	@Autowired
 	private MainService mainService;
+	@Autowired
+	private UserManagerService userManagerService;
 
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
 	@ResponseBody
@@ -51,10 +54,10 @@ public class MainController {
 		return "login";
 	}
 
-	@RequestMapping(value = "/")
+	@RequestMapping(value = "/error")
 	public String testerror() {
-		logger.error("testerror", new RuntimeException("testerror"));
-		throw new RuntimeException("testerror");
+		userManagerService.getUser("error");
+		return null;
 	}
 
 	

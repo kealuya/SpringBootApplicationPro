@@ -1,4 +1,4 @@
-package cn.com.szht.interceptor;
+package cn.com.szht.config.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

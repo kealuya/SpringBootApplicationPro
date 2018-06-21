@@ -1,4 +1,4 @@
-package cn.com.szht.exception;
+package cn.com.szht.config.exception;
 
 public class BusinessException extends Exception{
 

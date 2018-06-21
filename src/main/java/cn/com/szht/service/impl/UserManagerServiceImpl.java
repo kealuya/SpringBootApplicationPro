@@ -22,7 +22,7 @@ public class UserManagerServiceImpl implements UserManagerService {
 
 	@Override
 	public EMPLOYEE_INFO getUser(String userid) {
-		return null;
+		throw new RuntimeException("测试出问题");
 	}
 
 	@Override

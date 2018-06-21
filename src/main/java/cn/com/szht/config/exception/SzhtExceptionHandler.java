@@ -1,4 +1,4 @@
-package cn.com.szht.exception;
+package cn.com.szht.config.exception;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
 
-@Component
 public class SzhtExceptionHandler implements HandlerExceptionResolver {
 	private static final Logger logger = LoggerFactory.getLogger(SzhtExceptionHandler.class);
 	public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler,
