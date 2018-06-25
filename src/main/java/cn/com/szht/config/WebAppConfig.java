@@ -125,8 +125,7 @@ public class WebAppConfig extends WebMvcConfigurationSupport {
 	 * 全局错误处理
 	 */
 	@Override
-	public void configureHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers) {
-		super.configureHandlerExceptionResolvers(exceptionResolvers);
+	public void extendHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers) {
 		exceptionResolvers.add(new SzhtExceptionHandler());
 	}
 }
