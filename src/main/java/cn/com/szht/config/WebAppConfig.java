@@ -45,7 +45,7 @@ public class WebAppConfig extends WebMvcConfigurationSupport {
 	// 配置追加intercepter
 	@Override
 	protected void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(new CommonInterceptor());
+		registry.addInterceptor(new CommonInterceptor()).excludePathPatterns("/static/**", "/js/**");
 	}
 
 	@Bean
